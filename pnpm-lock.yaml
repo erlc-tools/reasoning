@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      dotenv:
+        specifier: ^17.0.0
+        version: 17.0.0
       erlc:
         specifier: ^1.2.0
         version: 1.2.0
@@ -17,6 +20,10 @@ packages:
   data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
+
+  dotenv@17.0.0:
+    resolution: {integrity: sha512-A0BJ5lrpJVSfnMMXjmeO0xUnoxqsBHWCoqqTnGwGYVdnctqXXUEhJOO7LxmgxJon9tEZFGpe0xPRX0h2v3AANQ==}
+    engines: {node: '>=12'}
 
   erlc@1.2.0:
     resolution: {integrity: sha512-+C3dMieJ6Vsc7gR1aAFM4dnuj8naK3xoWKQqjDzSIlSpUmxCOHkOCe1q7GEZe8U+SKnl1uHAqBF69nrh7DpO1A==}
@@ -45,6 +52,8 @@ packages:
 snapshots:
 
   data-uri-to-buffer@4.0.1: {}
+
+  dotenv@17.0.0: {}
 
   erlc@1.2.0:
     dependencies:
