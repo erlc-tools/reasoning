@@ -12,3 +12,7 @@ if (debug_pre == "true") { debug = true } else { debug = false };
 
 
 log.info(`DEBUG IS ${debug}`)
+
+// vars
+
+const token = process.env.tkn as string;
