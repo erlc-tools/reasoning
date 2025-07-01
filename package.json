@@ -1,0 +1,17 @@
+{
+  "name": "reasoning",
+  "version": "1.0.0",
+  "description": "ER:LC API script to require reasoning to moderation, and some roleplay commands.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "st": "node dist/index.js",
+    "dev": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "Fin",
+  "license": "GNU GPLv3",
+  "packageManager": "pnpm@10.10.0"
+}
