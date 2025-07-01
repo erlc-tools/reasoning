@@ -15,8 +15,10 @@
   "license": "GNU GPLv3",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
+    "@types/node": "^24.0.10",
     "dotenv": "^17.0.0",
     "erlc": "^1.2.0",
+    "tslog": "^4.9.3",
     "typescript": "^5.8.3"
   }
 }
