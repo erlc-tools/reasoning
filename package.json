@@ -13,5 +13,8 @@
   "keywords": [],
   "author": "Fin",
   "license": "GNU GPLv3",
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.10.0",
+  "dependencies": {
+    "erlc": "^1.2.0"
+  }
 }
