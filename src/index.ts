@@ -24,6 +24,7 @@ client.config();
 
 async function Task(): Promise<void> {
     // get logs
+    const logs = await erlc.getCommandLogs(token);
 
     // send to new cmd checker
 
