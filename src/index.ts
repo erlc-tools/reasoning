@@ -37,3 +37,8 @@ if (process.env.interval) {
 	}
 }
 log.info(`Interval is ${interval}`)
+
+Task()
+setInterval(() => {
+  Task().catch(console.error);
+}, interval);
