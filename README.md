@@ -1,4 +1,4 @@
-<h1 align="center">RequireReasoning</h1>
+<h1 align="center">Reasoning</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/built_on-typescript-blue" alt="Built on Typescript" width="125">
