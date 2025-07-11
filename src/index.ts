@@ -17,6 +17,10 @@ log.info(`DEBUG IS ${debug}`)
 // vars
 
 export const token = process.env.tkn as string;
+if (token == "") {
+    log.fatal("No token passed in.");
+    process.exit(1);
+}
 
 export const client = new erlc.Client({
     globalToken: process.env.ratelimit as string
