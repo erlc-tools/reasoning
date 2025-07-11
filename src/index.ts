@@ -26,3 +26,14 @@ async function Task(): Promise<void> {
 
     // alert
 }
+
+let interval = 15 as number // fallback
+if (process.env.interval) {
+	try {
+		interval = parseInt(process.env.interval) as number
+	} catch {
+		log.fatal("Could not parse interval. Make sure there is only a number in the entry.")
+		process.exit(1);
+	}
+}
+log.info(`Interval is ${interval}`)
