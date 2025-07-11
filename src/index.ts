@@ -1,6 +1,7 @@
 import * as erlc from 'erlc';
 import * as dotenv from "dotenv";
 import { Logger } from "tslog";
+import { newcmdchecker } from "./newcmdchecker"
 
 // post imports
 export const log = new Logger();
@@ -27,6 +28,7 @@ async function Task(): Promise<void> {
     const logs = await erlc.getCommandLogs(token);
 
     // send to new cmd checker
+    const newcmds = await newcmdchecker(logs);
 
     // check all the commands (make sure they have logs)
 
