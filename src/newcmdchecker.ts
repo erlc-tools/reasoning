@@ -4,7 +4,7 @@ import { unix } from "./utils"
 
 let latestcheck = unix() as number;
 
-async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
+export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
     let results = [] as CommandLog[]
     logs.forEach(log => {
         if (log.Timestamp > latestcheck) {
