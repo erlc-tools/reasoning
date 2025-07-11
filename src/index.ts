@@ -25,7 +25,14 @@ client.config();
 
 async function Task(): Promise<void> {
     // get logs
-    const logs = await erlc.getCommandLogs(token);
+    let logs = await erlc.getCommandLogs(token).catch(err => {
+        log.error("Task error while getting logs.", err)
+        logs = undefined; // make the task end
+    });
+    if (!logs) {
+        log.error("Task ended.")
+        return
+    }
 
     // send to new cmd checker
     const newcmds = await newcmdchecker(logs);
