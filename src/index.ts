@@ -27,6 +27,7 @@ async function Task(): Promise<void> {
     // alert
 }
 
+log.info("Loading interval")
 let interval = 15 as number // fallback
 if (process.env.interval) {
 	try {
@@ -38,6 +39,7 @@ if (process.env.interval) {
 }
 log.info(`Interval is ${interval}`)
 
+log.info("Starting Task Runner")
 Task()
 setInterval(() => {
   Task().catch(console.error);
