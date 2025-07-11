@@ -62,4 +62,4 @@ log.info("Starting Task Runner");
 Task()
 setInterval(() => {
   Task().catch(console.error);
-}, interval);
+}, interval * 1000);
