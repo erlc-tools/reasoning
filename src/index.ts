@@ -15,9 +15,9 @@ log.info(`DEBUG IS ${debug}`)
 
 // vars
 
-const token = process.env.tkn as string;
+export const token = process.env.tkn as string;
 
-const client = new erlc.Client({
+export const client = new erlc.Client({
     globalToken: process.env.ratelimit as string
 });
 client.config();
