@@ -19,8 +19,8 @@ const token = process.env.tkn as string;
 
 const client = new erlc.Client({
     globalToken: process.env.ratelimit as string
-})
-client.config()
+});
+client.config();
 
 async function Task(): Promise<void> {
     // get logs
@@ -30,9 +30,9 @@ async function Task(): Promise<void> {
     // check all the commands (make sure they have logs)
 
     // alert
-}
+};
 
-log.info("Loading interval")
+log.info("Loading interval");
 let interval = 15 as number // fallback
 if (process.env.interval) {
 	try {
@@ -40,11 +40,11 @@ if (process.env.interval) {
 	} catch {
 		log.fatal("Could not parse interval. Make sure there is only a number in the entry.")
 		process.exit(1);
-	}
-}
-log.info(`Interval is ${interval}`)
+	};
+};
+log.info(`Interval is ${interval}`);
 
-log.info("Starting Task Runner")
+log.info("Starting Task Runner");
 Task()
 setInterval(() => {
   Task().catch(console.error);
