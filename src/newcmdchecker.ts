@@ -1,4 +1,3 @@
-import { log, token, client } from ".";
 import { CommandLog } from "erlc";
 import { unix } from "./utils"
 
