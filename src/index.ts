@@ -16,3 +16,13 @@ log.info(`DEBUG IS ${debug}`)
 // vars
 
 const token = process.env.tkn as string;
+
+async function Task(): Promise<void> {
+    // get logs
+
+    // send to new cmd checker
+
+    // check all the commands (make sure they have logs)
+
+    // alert
+}
