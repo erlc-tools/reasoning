@@ -28,6 +28,7 @@ export const client = new erlc.Client({
 client.config();
 
 async function Task(): Promise<void> {
+    if (debug == true) { log.debug("task running") }
     // get logs
     let logs = await erlc.getCommandLogs(token).catch(err => {
         log.error("Task error while getting logs.", err)
@@ -40,6 +41,7 @@ async function Task(): Promise<void> {
 
     // send to new cmd checker
     const newcmds = await newcmdchecker(logs);
+    if (debug == true) { log.debug("newcmds: ", newcmds) }
 
     // check all the commands (make sure they have logs)
 
