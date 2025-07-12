@@ -2,14 +2,13 @@ import * as erlc from 'erlc';
 import * as dotenv from "dotenv";
 import { Logger } from "tslog";
 import { newcmdchecker } from "./newcmdchecker"
+import { isDebug } from './debug';
 
 // post imports
 export const log = new Logger();
 dotenv.config()
 
-const debug_pre = process.env.debug as string;
-export var debug = false as boolean;
-if (debug_pre == "true") { debug = true } else { debug = false };
+const debug = isDebug();
 
 
 log.info(`DEBUG IS ${debug}`)
