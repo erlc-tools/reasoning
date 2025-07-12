@@ -8,7 +8,7 @@ export const log = new Logger();
 dotenv.config()
 
 const debug_pre = process.env.debug as string;
-export var debug = false as boolean; // fuck compiler errors
+export var debug = false as boolean;
 if (debug_pre == "true") { debug = true } else { debug = false };
 
 
