@@ -10,5 +10,6 @@ export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
             results.push(log)
         }
     })
+    latestcheck = unix() as number
     return results;
 }
