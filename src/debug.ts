@@ -1,4 +1,6 @@
 import { hi } from "./funchellos"
+import * as dotenv from "dotenv";
+dotenv.config()
 var _cache: null | boolean = null
 
 export function isDebug(): boolean {
