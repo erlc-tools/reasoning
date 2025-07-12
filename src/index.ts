@@ -3,6 +3,7 @@ import * as dotenv from "dotenv";
 import { newcmdchecker } from "./newcmdchecker"
 import { isDebug } from './debug';
 import { logger } from "./logger"
+import { hi } from "./funchellos"
 
 // post imports
 dotenv.config()
@@ -26,7 +27,7 @@ export const client = new erlc.Client({
 client.config();
 
 async function Task(): Promise<void> {
-    if (debug == true) { logger.debug("task running") }
+    hi("Task")
     // get logs
     let logs = await erlc.getCommandLogs(token).catch(err => {
         logger.error("Task error while getting logs.", err)

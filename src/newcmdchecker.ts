@@ -2,11 +2,13 @@ import { CommandLog } from "erlc";
 import { unix } from "./utils";
 import { isDebug } from "./debug";
 import { logger } from "./logger";
+import { hi } from "./funchellos"
 
 const debug = isDebug();
 let latestcheck = unix() as number;
 
 export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
+    hi("newcmdchecker")
     let results = [] as CommandLog[]
     logs.forEach(log => {
         if (log.Timestamp > latestcheck) {
