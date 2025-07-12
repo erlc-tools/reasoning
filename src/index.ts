@@ -1,23 +1,22 @@
 import * as erlc from 'erlc';
 import * as dotenv from "dotenv";
-import { Logger } from "tslog";
 import { newcmdchecker } from "./newcmdchecker"
 import { isDebug } from './debug';
+import { logger } from "./logger"
 
 // post imports
-export const log = new Logger();
 dotenv.config()
 
 const debug = isDebug();
 
 
-log.info(`DEBUG IS ${debug}`)
+logger.info(`DEBUG IS ${debug}`)
 
 // vars
 
 export const token = process.env.tkn as string;
 if (token == "") {
-    log.fatal("No token passed in.");
+    logger.fatal("No token passed in.");
     process.exit(1);
 }
 
@@ -27,39 +26,39 @@ export const client = new erlc.Client({
 client.config();
 
 async function Task(): Promise<void> {
-    if (debug == true) { log.debug("task running") }
+    if (debug == true) { logger.debug("task running") }
     // get logs
     let logs = await erlc.getCommandLogs(token).catch(err => {
-        log.error("Task error while getting logs.", err)
+        logger.error("Task error while getting logs.", err)
         logs = undefined; // make the task end
     });
     if (!logs) {
-        log.error("Task ended.")
+        logger.error("Task ended.")
         return
     }
 
     // send to new cmd checker
     const newcmds = await newcmdchecker(logs);
-    if (debug == true) { log.debug("newcmds: ", newcmds) }
+    if (debug == true) { logger.debug("newcmds: ", newcmds) }
 
     // check all the commands (make sure they have logs)
 
     // alert
 };
 
-log.info("Loading interval");
+logger.info("Loading interval");
 let interval = 15 as number // fallback
 if (process.env.interval) {
 	try {
 		interval = parseInt(process.env.interval) as number
 	} catch {
-		log.fatal("Could not parse interval. Make sure there is only a number in the entry.")
+		logger.fatal("Could not parse interval. Make sure there is only a number in the entry.")
 		process.exit(1);
 	};
 };
-log.info(`Interval is ${interval}`);
+logger.info(`Interval is ${interval}`);
 
-log.info("Starting Task Runner");
+logger.info("Starting Task Runner");
 Task()
 setInterval(() => {
   Task().catch(console.error);

@@ -1,7 +1,7 @@
 import { CommandLog } from "erlc";
 import { unix } from "./utils";
 import { isDebug } from "./debug";
-import { Logger } from "tslog";
+import { logger } from "./logger";
 
 const debug = isDebug();
 let latestcheck = unix() as number;
@@ -11,9 +11,9 @@ export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
     logs.forEach(log => {
         if (log.Timestamp > latestcheck) {
             results.push(log)
-            if(debug==true){ new Logger().debug("logging this because log.Timestamp > latestcheck. this: ", log)} // please replace this someday
+            if(debug==true){ logger.debug("logging this because log.Timestamp > latestcheck. this: ", log)}
         } else if (log.Timestamp <= latestcheck) {
-            if(debug==true){ new Logger().debug(" Not logging this because log.Timestamp <= latestcheck. this: ", log)} // please replace this someday
+            if(debug==true){ logger.debug(" Not logging this because log.Timestamp <= latestcheck. this: ", log)}
         }
     })
     latestcheck = unix() as number
