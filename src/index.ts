@@ -1,13 +1,10 @@
 import * as erlc from 'erlc';
-import * as dotenv from "dotenv";
 import { newcmdchecker } from "./newcmdchecker"
 import { isDebug } from './debug';
 import { logger } from "./logger"
 import { hi } from "./funchellos"
 
 // post imports
-dotenv.config()
-
 const debug = isDebug();
 
 
