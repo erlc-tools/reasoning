@@ -6,6 +6,8 @@
   <img src="https://img.shields.io/badge/uses-pnpm-red" alt="Uses PNPM" width="80">
 
   <img src="https://img.shields.io/github/commit-activity/t/erlc-tools/reasoning/new?color=green" alt="Commits" width="80">
+
+  <img src="https://www.codefactor.io/repository/github/erlc-tools/reasoning/badge" alt="Reasoning Codefactor Rating" width="100">
 </p>
 
 <p align="center">
