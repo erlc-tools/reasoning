@@ -1,9 +1,13 @@
 import { CommandLog } from "erlc";
+import { isDebug } from "./debug";
 
 type CommandBinding = {
     action: CommandLog,
     reason: CommandLog
 }
+
+const debug = isDebug();
+
 
 export function isReasonCmd(log: CommandLog): boolean {
     if (log.Command.includes(":log reasoning ")) {
@@ -26,5 +30,5 @@ export function commandBinder(logs: CommandLog[]): CommandBinding[] {
         }
     })
 
-    
+
 }
