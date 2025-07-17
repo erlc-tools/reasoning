@@ -7,7 +7,7 @@ import { hi } from "./funchellos"
 const debug = isDebug();
 let latestcheck = unix() as number;
 
-const tooMuchDebugging = true as boolean;
+const tooMuchDebugging = false as boolean;
 
 export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
     hi("newcmdchecker")
