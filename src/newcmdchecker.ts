@@ -12,6 +12,7 @@ const tooMuchDebugging = false as boolean;
 export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
     hi("newcmdchecker")
     let results = [] as CommandLog[]
+    if(debug==true){ logger.debug("current latestcheck ", latestcheck)}
     logs.forEach(log => {
         if (log.Timestamp >= latestcheck) {
             results.push(log)
