@@ -1,5 +1,6 @@
 import { CommandLog } from "erlc";
 import { isDebug } from "./debug";
+import { hi } from "./funchellos";
 
 type CommandBinding = {
     action: CommandLog,
@@ -10,6 +11,7 @@ const debug = isDebug();
 
 
 export function isReasonCmd(log: CommandLog): boolean {
+    hi("isReasonCmd")
     if (log.Command.includes(":log reasoning ")) {
         return true;
     }
@@ -18,6 +20,7 @@ export function isReasonCmd(log: CommandLog): boolean {
 
 
 export function commandBinder(logs: CommandLog[]): CommandBinding[] {
+    hi("commandBinder")
     // go through each log, and check if its an action cmd or a reason cmd
     let actionCmds = [] as CommandLog[];
     let reasonCmds = [] as CommandLog[];
