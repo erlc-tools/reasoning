@@ -15,9 +15,9 @@ export async function newcmdchecker(logs: CommandLog[]): Promise<CommandLog[]> {
     logs.forEach(log => {
         if (log.Timestamp >= latestcheck) {
             results.push(log)
-            if(tooMuchDebugging==true){ logger.debug("logging this because log.Timestamp > latestcheck. this: ", log)}
+            if(tooMuchDebugging==true){ logger.debug("logging this because log.Timestamp >= latestcheck. this: ", log)}
         } else if (log.Timestamp < latestcheck) {
-            if(tooMuchDebugging==true){ logger.debug(" Not logging this because log.Timestamp <= latestcheck. this: ", log)}
+            if(tooMuchDebugging==true){ logger.debug(" Not logging this because log.Timestamp < latestcheck. this: ", log)}
         }
     })
     latestcheck = unix() as number
