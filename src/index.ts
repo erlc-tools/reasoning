@@ -3,6 +3,7 @@ import { newcmdchecker } from "./newcmdchecker"
 import { isDebug } from './debug';
 import { logger } from "./logger"
 import { hi } from "./funchellos"
+import { commandBinder } from './commandbinder';
 
 // post imports
 const debug = isDebug();
@@ -40,6 +41,8 @@ async function Task(): Promise<void> {
     if (debug == true) { logger.debug("newcmds: ", newcmds) }
 
     // check all the commands (make sure they have logs)
+
+    commandBinder(newcmds);
 
     // alert
 };
